@@ -32,7 +32,7 @@ const projectRoutes = require('./routes/projectRoutes');
 const ratingRoutes = require('./routes/ratingRoutes');
 const winner = require('./routes/adminRoutes');
 
-app.use('//projects', projectRoutes);
+app.use('/api/projects', projectRoutes);
 app.use('/api/ratings', ratingRoutes);
 app.use('/api/winner', winner);
 
