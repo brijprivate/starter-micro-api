@@ -5,7 +5,7 @@ const Rating = require('../models/ratingModel');
 
 // Submit rating
 router.post('/', async (req, res) => {
-  const { projectId, name, question1, question2, question3 } = req.body;
+  const { projectId, name, mobile,description,question1, question2, question3 } = req.body;
 
   try {
     const existingRating = await Rating.findOne({ projectId, name });
@@ -17,9 +17,12 @@ router.post('/', async (req, res) => {
     const newRating = new Rating({
       projectId,
       name,
+      mobile,
+      description,
       question1,
       question2,
       question3,
+      
     });
 
     await newRating.save();
